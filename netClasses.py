@@ -7,7 +7,7 @@ import torch.optim as optim
 import torch.nn.functional as F
 import pickle
 
-
+# test
 from main import rho, rhop
 
 class SNN(nn.Module):
