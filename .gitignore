@@ -1,0 +1,8 @@
+*.pkl
+*.txt
+*.npy
+#*.csv
+*.png
+*.svg
+*.out
+*.pt
