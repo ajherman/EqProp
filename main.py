@@ -408,6 +408,7 @@ if __name__ == '__main__':
     # Write params to pickle file
     with open(args.directory+'/params.txt', 'w',encoding='utf8') as f:
         keys = ['N1','N2','dt','tau_dynamic','size_tab','lr_tab','use_bias','no_reset','no_rhop','plain_data','update_rule','trace_decay','spiking','spike_method','omega','step','no_clamp','beta']
+        
         param_dict = {key:net.__dict__[key] for key in keys}
         json.dump(param_dict,f)
         print(param_dict)
@@ -441,7 +442,11 @@ if __name__ == '__main__':
             error_train_tab.append(error_train)
 
             error_test = evaluate(net, test_loader,learning_rule=args.learning_rule)
-            error_test_tab.append(error_test) ;
+            error_test_tab.append(error_test) 
+
+            if error_test>0.85 and net.current_epoch>5:
+                assert(0)
+                
             results_dict = {'error_train_tab' : error_train_tab, 'error_test_tab' : error_test_tab,
                             'elapsed_time': datetime.datetime.now() - start_time}
 
