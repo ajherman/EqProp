@@ -9,7 +9,7 @@
 #source activate /vast/home/ajherman/miniconda3/envs/pytorch
 
 epochs=25
-cores=20
+cores=8
 
 # Accumulator neuron experiments
 T1=8
