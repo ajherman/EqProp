@@ -22,11 +22,11 @@ batch_size=20
 omega=1
 
 # for omega in {1,4,16,64,256,1024}
-for lr1 in {0.0028,0.0056,0.01}
+for lr1 in {0.0028,0.0056}
 do
 for lr2 in {0.0028,0.0056,0.01}
 do
-for lr3 in {0.0028,0.0056,0.01}
+for lr3 in {0.0056,0.01}
 do
 for hidden_size1 in {128,256,384}
 do
@@ -34,7 +34,7 @@ for hidden_size2 in {128,256,384}
 do
 for tau_dynamic in {0.1,0.2,0.4}
 do
-for beta in {0.1,0.2,0.4}
+for beta in {0.2,0.4}
 do
 stdp0_dir=compare_stdp0_omega_"$omega"_tau_"$tau_dynamic"_h1_"$hidden_size1"_h2_"$hidden_size2"_lr1_"$lr1"_lr2_"$lr2"_lr3_"$lr3"_beta_"$beta"
 stdp1_dir=compare_stdp1_omega_"$omega"_tau_"$tau_dynamic"_h1_"$hidden_size1"_h2_"$hidden_size2"_lr1_"$lr1"_lr2_"$lr2"_lr3_"$lr3"_beta_"$beta"
